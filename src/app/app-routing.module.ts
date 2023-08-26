@@ -11,6 +11,7 @@ import { RegisterComponent } from './register/register.component';
 import { VerifyEmailComponent } from './verify-email/verify-email.component';
 import { ForgotPasswordComponent } from './fotgot-password/fotgot-password.component';
 import { OrderTrackPageComponent } from './order-track-page/order-track-page.component';
+import { OrderconfirmationComponent } from './orderconfirmation/orderconfirmation.component';
 
 const routes: Routes = [
   // { path: 'restaurantlist', loadChildren: () => import('./restaurantlisting/restaurantlisting.module').then(m => m.RestaurantlistingModule) }
@@ -32,6 +33,7 @@ const routes: Routes = [
   },
   { path: 'cart-page', component: ShoppingcartComponent },
   { path: 'checkout', component: CheckoutComponent },
+  { path: 'order-confirmed/:orderId', component: OrderconfirmationComponent },
   { path: 'track/:orderId', component: OrderTrackPageComponent },
 ];
 
