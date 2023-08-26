@@ -1,21 +1,8 @@
-<div class="container">
-  <div class="content" *ngIf="order">
-    <h1>Order #{{ order.id }}</h1>
-    <div class="details">
-      <div><strong>Date</strong> {{ order.createdAt | date : "medium" }}</div>
-      <div><strong>Name</strong> {{ order.name }}</div>
-      <div><strong>Address</strong> {{ order.address }}</div>
-      <div><strong>Status</strong> {{ order.status }}</div>
-      <div *ngIf="order.paymentId">
-        <strong>Payment ID</strong> {{ order.paymentId }}
-      </div>
+<div class="order-tracking-container">
+  <div *ngFor="let status of orderStatuses; let i = index" class="order-status">
+    <div class="status-icon" [ngClass]="{ active: i <= currentStatusIndex }">
+      <i class="fas" [ngClass]="status.icon"></i>
     </div>
-
-    <order-items-list [order]="order"></order-items-list>
-  </div>
-
-  <div>
-    <app-title title="Shipping Address"></app-title>
-    <!-- <map [order]="order" [readonly]="true"></map> -->
+    <div class="status-text">{{ status.text }}</div>
   </div>
 </div>

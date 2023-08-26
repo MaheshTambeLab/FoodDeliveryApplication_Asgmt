@@ -24,6 +24,7 @@ import { TextInputComponentimplements } from './text-input/text-input.component'
 import { InputValidationComponent } from './input-validation/input-validation.component';
 import { OrderItemsListComponent } from './order-items-list/order-items-list.component';
 import { OrderTrackPageComponent } from './order-track-page/order-track-page.component';
+import { OrderconfirmationComponent } from './orderconfirmation/orderconfirmation.component';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import { OrderTrackPageComponent } from './order-track-page/order-track-page.com
     InputValidationComponent,
     OrderItemsListComponent,
     OrderTrackPageComponent,
+    OrderconfirmationComponent,
   ],
   imports: [
     BrowserModule,

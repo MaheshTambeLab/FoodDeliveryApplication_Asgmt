@@ -2,6 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { Order } from '../shared/models/Order';
 import { ActivatedRoute } from '@angular/router';
 import { OrderService } from '../services/order/order.service';
+import { CartService } from '../services/cart/cart.service';
+
+interface OrderStatus {
+  text: string;
+  icon: string;
+}
 
 @Component({
   selector: 'app-order-track-page',
@@ -9,23 +15,16 @@ import { OrderService } from '../services/order/order.service';
   styleUrls: ['./order-track-page.component.css'],
 })
 export class OrderTrackPageComponent implements OnInit {
-  order!: Order | undefined;
-  constructor(
-    activatedRoute: ActivatedRoute,
-    private orderService: OrderService
-  ) {
-    const params = activatedRoute.snapshot.params;
-    if (!params['orderId']) return;
-  }
+  orderStatuses: OrderStatus[] = [
+    { text: 'Order Received', icon: 'fa-shopping-cart' },
+    { text: 'Preparing', icon: 'fa-cog' },
+    { text: 'Out for Delivery', icon: 'fa-truck' },
+    { text: 'Delivered', icon: 'fa-check-circle' },
+  ];
 
-  ngOnInit() {
-    const orderId = 1;
-    this.trackOrder(orderId);
-  }
+  currentStatusIndex: number = 1; // Change this value to track the order status
 
-  trackOrder(id: number) {
-    this.orderService.trackOrderById(id).subscribe((order) => {
-      this.order = order;
-    });
-  }
+  constructor() {}
+
+  ngOnInit(): void {}
 }

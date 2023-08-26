@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { CartService } from '../services/cart/cart.service';
 import { Order } from '../shared/models/Order';
 import { AuthService } from '../services/auth/auth.service';
+import { OrderService } from '../services/order/order.service';
 
 @Component({
   selector: 'app-checkout',
@@ -17,13 +18,11 @@ export class CheckoutComponent implements OnInit {
     cartService: CartService,
     private formBuilder: FormBuilder,
     private authService: AuthService,
-    // private toastrService: ToastrService,
-    // private orderService: OrderService,
+    private orderService: OrderService,
     private router: Router
   ) {
     const cart = cartService.getCart();
     this.order.items = cart.items;
-    console.log('******** ' + this.order.items);
     this.order.totalPrice = cart.totalPrice;
   }
 
@@ -40,28 +39,9 @@ export class CheckoutComponent implements OnInit {
   }
 
   createOrder() {
-    this.router.navigate(['track/1']);
-
-    if (this.checkoutForm.invalid) {
-      // this.toastrService.warning('Please fill the inputs', 'Invalid Inputs');
-      return;
-    }
-
-    // if(!this.order.addressLatLng){
-    //   this.toastrService.warning('Please select your location on the map', 'Location');
-    //   return;
-    // }
-
-    this.order.name = this.fc['email'].value;
-    this.order.address = this.fc['address'].value;
-
-    // this.orderService.create(this.order).subscribe({
-    //   next:() => {
-    //     this.router.navigateByUrl('/payment');
-    //   },
-    //   error:(errorResponse: { error: any; }) => {
-    //     this.toastrService.error(errorResponse.error, 'Cart');
-    //   }
-    // })
+    const orderId = this.orderService.generateOrderId();
+    this.order.id = orderId;
+    this.orderService.setOrderToLocalStorage1(orderId.toString(), this.order);
+    this.router.navigate(['order-confirmed/' + orderId]);
   }
 }
