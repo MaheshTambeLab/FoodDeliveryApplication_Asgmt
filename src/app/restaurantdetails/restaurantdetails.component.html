@@ -1,0 +1,52 @@
+<app-not-found
+  [visible]="!restaurant"
+  notFoundMessage="Food Not Found"
+  resetLinkText="Back To Homepage"
+>
+</app-not-found>
+<div *ngIf="restaurant" class="container">
+  <img [src]="restaurant.imageUrl" [alt]="restaurant.name" />
+  <div class="details">
+    <div class="header">
+      <span class="name">
+        {{ restaurant.name }}
+      </span>
+      <span class="favorite {{ restaurant.favorite ? '' : 'not' }}"> ❤ </span>
+    </div>
+    <div class="rating">
+      <app-starrating [stars]="restaurant.stars" />
+    </div>
+
+    <div class="origins">
+      <span *ngFor="let origin of restaurant.origins">
+        {{ origin }}
+      </span>
+    </div>
+
+    <div class="tags">
+      <app-tags [foodPageTags]="restaurant.tags"></app-tags>
+    </div>
+
+    <div class="cook-time">
+      <span>
+        Time to cook about <strong>{{ restaurant.cookTime }}</strong> minutes
+      </span>
+    </div>
+
+    <div class="price">
+      <span>{{ restaurant.price | currency : "INR" }}</span>
+    </div>
+    <button (click)="addToCart()">Add To Cart</button>
+  </div>
+</div>
+<div *ngIf="restaurant" class="containermenureview">
+  <div class="details">
+    <ul class="tab-nav">
+      <li routerLink="menu" routerLinkActive="active">Menu</li>
+      <li routerLink="reviews" routerLinkActive="active">Reviews</li>
+    </ul>
+    <div class="tab-content">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

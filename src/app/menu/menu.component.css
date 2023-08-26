@@ -1,0 +1,79 @@
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+}
+
+img {
+  border-radius: 3rem;
+  flex: 1 0;
+  object-fit: cover;
+  height: 17rem;
+  margin: 1rem;
+  max-width: 18rem;
+}
+
+.content {
+  flex: 1;
+}
+
+.name {
+  font-weight: bold;
+  font-size: 1.2em;
+  margin-bottom: 5px;
+}
+
+.favorite {
+  font-size: 1.5em;
+  margin-right: 5px;
+  color: red;
+}
+
+.not {
+  color: gray;
+}
+
+.stars {
+  margin-bottom: 10px;
+}
+
+.origins span {
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.cook-time {
+  display: flex;
+  align-items: center;
+  font-size: 0.9em;
+  margin-bottom: 10px;
+}
+
+.cook-time span {
+  margin-right: 5px;
+}
+
+.price {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.btn {
+  background-color: red;
+  color: #fff;
+  border: none;
+  padding: 8px 15px;
+  cursor: pointer;
+  font-size: 0.9em;
+}
+
+li + li {
+  margin-top: 20px;
+}

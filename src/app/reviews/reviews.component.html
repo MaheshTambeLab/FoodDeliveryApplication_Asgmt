@@ -1,0 +1,18 @@
+<ul>
+  <li *ngFor="let customerReview of customerReview">
+    <a routerLink="/customerReview/{{ customerReview.id }}">
+      <img [src]="customerReview.imageUrl" [alt]="customerReview.name" />
+      <div class="content">
+        <div class="name">
+          <h1>{{ customerReview.name }}</h1>
+        </div>
+        <div class="stars">
+          <app-starrating [stars]="customerReview.stars" />
+        </div>
+        <div>
+          {{ customerReview.comment }}
+        </div>
+      </div>
+    </a>
+  </li>
+</ul>

@@ -1,0 +1,26 @@
+<app-search></app-search>
+<app-tags></app-tags>
+<app-not-found
+  [visible]="!restaurants || !restaurants.length"
+  resetLinkText="Reset Search"
+>
+</app-not-found>
+<ul>
+  <li *ngFor="let restaurant of restaurants">
+    <a routerLink="/restaurant-detail/{{ restaurant.id }}">
+      <img [src]="restaurant.imageUrl" [alt]="restaurant.name" />
+      <div class="content">
+        <div class="name">
+          {{ restaurant.name }}
+        </div>
+        <div class="cook-time">
+          <span>🕒</span>
+          {{ restaurant.cookTime }}
+        </div>
+        <div class="stars">
+          <app-starrating [stars]="restaurant.stars" />
+        </div>
+      </div>
+    </a>
+  </li>
+</ul>
