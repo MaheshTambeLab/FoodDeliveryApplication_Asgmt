@@ -11,32 +11,21 @@
       <span class="name">
         {{ restaurant.name }}
       </span>
-      <span class="favorite {{ restaurant.favorite ? '' : 'not' }}"> ❤ </span>
     </div>
     <div class="rating">
       <app-starrating [stars]="restaurant.stars" />
     </div>
-
-    <div class="origins">
-      <span *ngFor="let origin of restaurant.origins">
-        {{ origin }}
-      </span>
+    <div>
+      <br />
+      <strong> Address, and Contact information </strong>
+      <p>
+        {{ restaurant.restaurantAddress.street }},
+        {{ restaurant.restaurantAddress.pincode }},
+        {{ restaurant.restaurantAddress.city }}
+      </p>
+      <p>Phone: {{ restaurant.restaurantAddress.contact.phone }}</p>
+      <p>Email: {{ restaurant.restaurantAddress.contact.email }}</p>
     </div>
-
-    <div class="tags">
-      <app-tags [foodPageTags]="restaurant.tags"></app-tags>
-    </div>
-
-    <div class="cook-time">
-      <span>
-        Time to cook about <strong>{{ restaurant.cookTime }}</strong> minutes
-      </span>
-    </div>
-
-    <div class="price">
-      <span>{{ restaurant.price | currency : "INR" }}</span>
-    </div>
-    <button (click)="addToCart()">Add To Cart</button>
   </div>
 </div>
 <div *ngIf="restaurant" class="containermenureview">

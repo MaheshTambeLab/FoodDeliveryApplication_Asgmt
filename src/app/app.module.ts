@@ -4,11 +4,9 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
-import { TagsComponent } from './tags/tags.component';
 import { RestaurantdetailsComponent } from './restaurantdetails/restaurantdetails.component';
 import { RestaurantlistingComponent } from './restaurantlisting/restaurantlisting.component';
 import { StarratingComponent } from './starrating/starrating.component';
-import { SearchComponent } from './search/search.component';
 import { ShoppingcartComponent } from './shoppingcart/shoppingcart.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { CheckoutComponent } from './checkout/checkout.component';
@@ -34,8 +32,6 @@ import { OrderTrackPageComponent } from './order-track-page/order-track-page.com
     RestaurantdetailsComponent,
     RestaurantlistingComponent,
     StarratingComponent,
-    SearchComponent,
-    TagsComponent,
     ShoppingcartComponent,
     NotFoundComponent,
     CheckoutComponent,

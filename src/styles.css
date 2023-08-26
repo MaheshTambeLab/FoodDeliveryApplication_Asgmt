@@ -24,7 +24,6 @@ a{
   text-decoration: none;
 } */
 
-
 @import url("https://fonts.googleapis.com/css2?family=Quicksand&display=swap");
 
 /* Apply a universal box-sizing */
@@ -34,11 +33,12 @@ a{
 
 /* Set a base font size for easier rem unit usage */
 /* html { */
-  /* font-size: 18px; Adjust base font size as needed */
+/* font-size: 18px; Adjust base font size as needed */
 /* } */
 
 /* Apply the Quicksand font to most elements */
-html, button {
+html,
+button {
   font-family: "Quicksand", sans-serif;
 }
 
@@ -60,7 +60,8 @@ a:hover {
 }
 
 /* Improved button styling */
-button, .btn {
+button,
+.btn {
   font-family: "Quicksand", sans-serif;
   padding: 10px 20px;
   border: none;
@@ -69,17 +70,22 @@ button, .btn {
   transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
 }
 
-button:hover, .btn:hover {
+button:hover,
+.btn:hover {
   background-color: #007bff;
   color: #fff;
 }
 
 /* Add shadow to elements on hover */
-.button, .btn, a {
+.button,
+.btn,
+a {
   transition: box-shadow 0.3s ease-in-out;
 }
 
-.button:hover, .btn:hover, a:hover {
+.button:hover,
+.btn:hover,
+a:hover {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -137,4 +143,19 @@ button:hover, .btn:hover {
 
 .text-danger {
   color: #ff4646;
+}
+
+.background-image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* margin-top: 3rem;
+  margin-bottom: 1.5rem; */
+  /* Background image and other styles */
+  /* background-image: url("path_to_your_background_image.jpg"); /* Update the path */
+  background-image: url("./assets/joshua-lawrence-o_kNmj-6acM-unsplash.jpg");
+  background-size: cover;
+  background-position: center;
+  padding: 4rem 0; /* Adding vertical padding and removing horizontal padding */
+  border-radius: 1rem; /* Rounded corners for the container */
 }
