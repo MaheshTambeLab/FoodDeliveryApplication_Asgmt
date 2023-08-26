@@ -2,33 +2,42 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, delay, of } from 'rxjs';
 import { CartItem } from 'src/app/shared/models/CartItem';
+import { Food } from 'src/app/shared/models/Food';
 import { Order } from 'src/app/shared/models/Order';
-import { Restaurant } from 'src/app/shared/models/Restaurant';
 
-// const mockOrders: Order[] = [
-//   // Your mock order data here
-// ];
-
-const mockRestaurants: Restaurant[] = [
+const mockRestaurants: Food[] = [
   {
-    id: 1,
-    name: 'Restaurant A',
-    price: 15,
-    favorite: false,
-    stars: 4,
-    imageUrl: 'restaurant-a.jpg',
-    origins: ['Italian', 'Mexican'],
-    cookTime: '30 minutes',
+    id: 1, //foodID
+    restaurantID: 1,
+    name: 'Classic Cheeseburger',
+    price: 9.99,
+    cookTime: '15 minutes',
+    favorite: true,
+    origins: ['American'],
+    stars: 4.4,
+    imageUrl: '/assets/images/foods/engin-akyurt-g1MG9i0ux8Y-unsplash.jpg',
   },
   {
     id: 2,
-    name: 'Restaurant B',
-    price: 20,
+    restaurantID: 1,
+    name: 'Fish and Chips',
+    price: 13.99,
+    cookTime: '20 minutes',
     favorite: true,
-    stars: 5,
-    imageUrl: 'restaurant-b.jpg',
-    origins: ['Asian'],
-    cookTime: '45 minutes',
+    origins: ['British'],
+    stars: 4.7,
+    imageUrl: '/assets/images/foods/mai-qu-c-tung-lam-HyuvFrHlJZc-unsplash.jpg',
+  },
+  {
+    id: 3,
+    restaurantID: 1,
+    name: 'Blueberry Pancakes',
+    price: 7.99,
+    cookTime: '10 minutes',
+    favorite: true,
+    origins: ['American'],
+    stars: 4.8,
+    imageUrl: '/assets/images/foods/cleo-stracuzza-I-X7DAAcZns-unsplash.jpg',
   },
   // Add more mock restaurants as needed
 ];

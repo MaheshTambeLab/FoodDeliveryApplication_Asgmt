@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Restaurant } from 'src/app/shared/models/Restaurant';
-import { Tag } from 'src/app/shared/models/Tag';
 
 @Injectable({
   providedIn: 'root',
@@ -16,30 +15,7 @@ export class RestaurantService {
     );
   }
 
-  getAllRestaurantsByTag(tag: string): Restaurant[] {
-    return tag == 'All'
-      ? this.getAllRestaurants()
-      : this.getAllRestaurants().filter((food) => food.tags?.includes(tag));
-  }
-
-  getAllTags(): Tag[] {
-    return [
-      { name: 'All', count: 14 },
-      { name: 'FastFood', count: 4 },
-      { name: 'Pizza', count: 2 },
-      { name: 'Lunch', count: 3 },
-      { name: 'SlowFood', count: 2 },
-      { name: 'Hamburger', count: 1 },
-      { name: 'Fry', count: 1 },
-      { name: 'Soup', count: 1 },
-    ];
-  }
-
   constructor() {}
-
-  // getAll(): Observable<Food[]> {
-  //   return this.http.get<Food[]>(FOODS_URL);
-  // }
 
   getAllRestaurants(): Restaurant[] {
     return [
@@ -52,7 +28,16 @@ export class RestaurantService {
         origins: ['italy'],
         stars: 4.5,
         imageUrl: '/assets/images/restaurant/restaurant-1.jpg',
-        tags: ['FastFood', 'Pizza', 'Lunch'],
+
+        restaurantAddress: {
+          street: '123 Main St',
+          pincode: '12345',
+          city: 'Exampleville',
+          contact: {
+            phone: '555-1234',
+            email: 'example@example.com',
+          },
+        },
       },
       {
         id: 2,
@@ -63,7 +48,15 @@ export class RestaurantService {
         origins: ['persia', 'middle east', 'china'],
         stars: 4.7,
         imageUrl: '/assets/images/restaurant/restaurant-2.jpg',
-        tags: ['SlowFood', 'Lunch'],
+        restaurantAddress: {
+          street: '123 Main St',
+          pincode: '12345',
+          city: 'Exampleville',
+          contact: {
+            phone: '555-1234',
+            email: 'example@example.com',
+          },
+        },
       },
       {
         id: 3,
@@ -74,7 +67,16 @@ export class RestaurantService {
         origins: ['germany', 'us'],
         stars: 3.5,
         imageUrl: '/assets/images/restaurant/restaurant-3.jpg',
-        tags: ['FastFood', 'Hamburger'],
+
+        restaurantAddress: {
+          street: '456 Elm Ave',
+          pincode: '67890',
+          city: 'Sampleburg',
+          contact: {
+            phone: '555-5678',
+            email: 'sample@example.com',
+          },
+        },
       },
       {
         id: 4,
@@ -85,7 +87,16 @@ export class RestaurantService {
         origins: ['belgium', 'france'],
         stars: 3.3,
         imageUrl: '/assets/images/restaurant/restaurant-4.jpg',
-        tags: ['FastFood', 'Fry'],
+
+        restaurantAddress: {
+          street: '789 Oak Rd',
+          pincode: '54321',
+          city: 'Townsville',
+          contact: {
+            phone: '555-9876',
+            email: 'town@example.com',
+          },
+        },
       },
       {
         id: 5,
@@ -96,7 +107,15 @@ export class RestaurantService {
         origins: ['india', 'asia'],
         stars: 3.0,
         imageUrl: '/assets/images/restaurant/restaurant-5.jpg',
-        tags: ['SlowFood', 'Soup'],
+        restaurantAddress: {
+          street: '101 Pine Lane',
+          pincode: '13579',
+          city: 'Villagetown',
+          contact: {
+            phone: '555-2468',
+            email: 'village@example.com',
+          },
+        },
       },
       {
         id: 6,
@@ -107,7 +126,15 @@ export class RestaurantService {
         origins: ['italy'],
         stars: 4.0,
         imageUrl: '/assets/images/restaurant/restaurant-6.jpg',
-        tags: ['FastFood', 'Pizza', 'Lunch'],
+        restaurantAddress: {
+          street: '222 Maple Street',
+          pincode: '86420',
+          city: 'Mapleville',
+          contact: {
+            phone: '555-8888',
+            email: 'maple@example.com',
+          },
+        },
       },
       {
         id: 7,
@@ -118,7 +145,15 @@ export class RestaurantService {
         origins: ['italy'],
         stars: 4.0,
         imageUrl: '/assets/images/restaurant/restaurant-7.jpg',
-        tags: ['FastFood', 'Pizza', 'Lunch'],
+        restaurantAddress: {
+          street: '333 Cedar Avenue',
+          pincode: '97531',
+          city: 'Cedarville',
+          contact: {
+            phone: '555-5555',
+            email: 'cedar@example.com',
+          },
+        },
       },
       {
         id: 8,
@@ -129,7 +164,15 @@ export class RestaurantService {
         origins: ['italy'],
         stars: 4.0,
         imageUrl: '/assets/images/restaurant/restaurant-8.jpg',
-        tags: ['FastFood', 'Pizza', 'Lunch'],
+        restaurantAddress: {
+          street: '444 Birch Drive',
+          pincode: '24680',
+          city: 'Birchwood',
+          contact: {
+            phone: '555-1111',
+            email: 'birch@example.com',
+          },
+        },
       },
       {
         id: 9,
@@ -140,7 +183,15 @@ export class RestaurantService {
         origins: ['italy'],
         stars: 4.0,
         imageUrl: '/assets/images/restaurant/restaurant-9.jpg',
-        tags: ['FastFood', 'Pizza', 'Lunch'],
+        restaurantAddress: {
+          street: '555 Pine Street',
+          pincode: '56789',
+          city: 'Pineville',
+          contact: {
+            phone: '555-7777',
+            email: 'pine@example.com',
+          },
+        },
       },
     ];
   }
