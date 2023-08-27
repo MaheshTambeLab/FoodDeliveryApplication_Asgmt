@@ -1,8 +1,18 @@
 <div class="order-tracking-container">
-  <div *ngFor="let status of orderStatuses; let i = index" class="order-status">
-    <div class="status-icon" [ngClass]="{ active: i <= currentStatusIndex }">
-      <i class="fas" [ngClass]="status.icon"></i>
+  <h1>Order Tracking</h1>
+  <div
+    *ngFor="let status of orderStatuses; let i = index"
+    class="order-status-item"
+    [ngClass]="getStatusClass(i, currentStatus)"
+  >
+    <div class="status-header" (click)="toggleCollapse(i)">
+      <div class="status-icon">
+        <i class="fa" [ngClass]="status.icon"></i>
+      </div>
+      <div class="status-text">{{ status.text }}</div>
     </div>
-    <div class="status-text">{{ status.text }}</div>
+    <!-- <div class="status-details" [ngClass]="{ collapsed: !status.isExpanded }">
+      Status details and additional content...
+    </div> -->
   </div>
 </div>

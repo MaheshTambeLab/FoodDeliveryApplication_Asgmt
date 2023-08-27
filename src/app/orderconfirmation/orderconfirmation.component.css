@@ -1,28 +1,41 @@
 .container {
-  margin-top: 1rem;
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 20px;
 }
 
 .content {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  max-width: 35rem;
-  margin-right: 1rem;
+  width: 70%;
+  background-color: #f5f5f5;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.details {
-  margin-bottom: 1rem;
+.track-link {
+  display: block;
+  margin-bottom: 10px;
+  text-decoration: none;
+  color: #007bff;
 }
 
-.details > div {
-  margin-top: 1rem;
-  font-size: 1.1rem;
+.order-header {
+  font-size: 24px;
+  margin-bottom: 10px;
 }
 
-.details strong {
-  display: inline-block;
-  width: 20%;
+.order-details {
+  margin-bottom: 20px;
+}
+
+.shipping-address {
+  width: 30%;
+  background-color: #f5f5f5;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.address-details {
+  font-size: 16px;
 }
