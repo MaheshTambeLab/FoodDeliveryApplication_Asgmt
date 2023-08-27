@@ -9,9 +9,9 @@ export class AddressService {
   private addresses: Address[] = [
     {
       id: 1,
-      street: '123 Main St',
-      city: 'Example City',
-      state: 'Example State',
+      street: 'Adarsh Nagar',
+      city: 'Pune',
+      state: 'Maharashtra',
       postalCode: '12345',
     },
   ];
@@ -20,7 +20,7 @@ export class AddressService {
     return this.addresses;
   }
 
-  getAddress(id: number): Address | undefined {
+  getAddress(id: number): Address | any {
     return this.addresses.find((address) => address.id === id);
   }
 
@@ -45,7 +45,7 @@ export class AddressService {
     }
   }
 
-  private generateUniqueId(): number {
+  public generateUniqueId(): number {
     return Math.floor(Math.random() * 10000);
   }
 }

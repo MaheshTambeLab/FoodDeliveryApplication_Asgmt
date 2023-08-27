@@ -1,16 +1,20 @@
 <div class="container">
   <div class="content" *ngIf="order">
-    <a routerLink="/track/{{ order.id }}" class="logo track-link"
-      >Track Your Order</a
-    >
+    <div class="order-success">Order placed successfully!</div>
+
     <h1 class="order-header">Order #{{ order.id }}</h1>
     <div class="order-details">
-      <div><strong>Date:</strong> {{ order.createdAt | date : "medium" }}</div>
-      <div><strong>Name:</strong> {{ order.name }}</div>
-      <div><strong>Address:</strong> {{ order.address }}</div>
+      <div>
+        <strong>Date:</strong> {{ order.createdDate | date : "dd/MMM/yyyy" }}
+      </div>
+      <!-- <div><strong>Name:</strong> {{ order.name }}</div>
+      <div><strong>Address:</strong> {{ order.address }}</div> -->
       <div><strong>Status:</strong> {{ order.status }}</div>
       <div *ngIf="order.paymentId">
         <strong>Payment ID:</strong> {{ order.paymentId }}
+      </div>
+      <div *ngIf="!order.paymentId">
+        <strong>Payment:</strong> Cash On Delivery
       </div>
     </div>
 
@@ -19,12 +23,16 @@
 
   <div class="shipping-address">
     <app-title title="Delivery Address"></app-title>
-    <!-- Add your shipping address content here -->
     <div class="address-details">
-      <div><strong>Name:</strong> John Doe</div>
-      <div><strong>Address:</strong> 123 Main Street</div>
-      <div><strong>City:</strong> Example City</div>
-      <div><strong>Country:</strong> Example Country</div>
+      <div><strong>Street:</strong>{{ address.street }}</div>
+      <div>
+        <strong>City:</strong> {{ address.city }}
+        <div><strong>PostalCode:</strong> {{ address.postalCode }}</div>
+        <div><strong>State:</strong>{{ address.state }}</div>
+      </div>
     </div>
+    <a routerLink="/track/{{ order.id }}" class="logo track-link"
+      >Track Your Order</a
+    >
   </div>
 </div>

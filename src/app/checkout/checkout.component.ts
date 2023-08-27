@@ -68,6 +68,8 @@ export class CheckoutComponent implements OnInit {
   createOrder() {
     const orderId = this.orderService.generateOrderId();
     this.order.id = orderId;
+    this.order.status = 'Order Placed';
+    this.order.createdDate = new Date();
     this.orderService.setOrderToLocalStorage1(orderId.toString(), this.order);
     const selectedAddressValue = this.selectedAddressControl.value;
     if (selectedAddressValue === 'new') {
