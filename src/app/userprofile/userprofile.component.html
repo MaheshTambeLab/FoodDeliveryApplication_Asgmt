@@ -1,0 +1,11 @@
+<p>userprofile works!</p>
+
+<div *ngFor="let address of addresses">
+  <div>
+    {{ address.street }}, {{ address.city }}, {{ address.state }}
+    {{ address.postalCode }}
+  </div>
+  <!-- <button (click)="editAddress(address)">Edit</button>
+  <button (click)="deleteAddress(address)">Delete</button> -->
+</div>
+<!-- <button (click)="addAddress()">Add New Address</button> -->

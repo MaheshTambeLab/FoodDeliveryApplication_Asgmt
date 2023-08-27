@@ -48,3 +48,12 @@ button:hover {
   opacity: 1;
   cursor: pointer;
 }
+
+.address-select {
+  margin-top: 1rem;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+  width: 100%;
+}
