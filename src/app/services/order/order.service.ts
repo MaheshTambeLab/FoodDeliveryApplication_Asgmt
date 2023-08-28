@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Order } from 'src/app/shared/models/Order';
+import { OrderStatus } from 'src/app/shared/models/OrderStatus';
 
 @Injectable({
   providedIn: 'root',
@@ -29,4 +30,11 @@ export class OrderService {
     const orderId = Math.floor(Math.random() * (max - min + 1)) + min;
     return orderId;
   }
+
+  orderStatuses: OrderStatus[] = [
+    { text: 'Order Placed', icon: 'fa-shopping-cart', isExpanded: false },
+    { text: 'Preparing', icon: 'fa-cog', isExpanded: false },
+    { text: 'Out for Delivery', icon: 'fa-truck', isExpanded: false },
+    { text: 'Delivered', icon: 'fa-check-circle', isExpanded: false },
+  ];
 }

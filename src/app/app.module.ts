@@ -25,6 +25,15 @@ import { InputValidationComponent } from './input-validation/input-validation.co
 import { OrderItemsListComponent } from './order-items-list/order-items-list.component';
 import { OrderTrackPageComponent } from './order-track-page/order-track-page.component';
 import { OrderconfirmationComponent } from './orderconfirmation/orderconfirmation.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatMenuModule } from '@angular/material/menu';
+import { UserprofileComponent } from './userprofile/userprofile.component';
 
 @NgModule({
   declarations: [
@@ -50,6 +59,7 @@ import { OrderconfirmationComponent } from './orderconfirmation/orderconfirmatio
     OrderItemsListComponent,
     OrderTrackPageComponent,
     OrderconfirmationComponent,
+    UserprofileComponent,
   ],
   imports: [
     BrowserModule,
@@ -57,6 +67,14 @@ import { OrderconfirmationComponent } from './orderconfirmation/orderconfirmatio
     AngularFireModule.initializeApp(environment.firebase),
     FormsModule,
     ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule,
+    MatExpansionModule,
+    MatMenuModule,
   ],
   exports: [],
   providers: [],
