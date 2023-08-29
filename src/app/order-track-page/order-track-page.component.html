@@ -1,21 +1,18 @@
-<div class="container">
-  <div class="content" *ngIf="order">
-    <h1>Order #{{ order.id }}</h1>
-    <div class="details">
-      <div><strong>Date</strong> {{ order.createdAt | date : "medium" }}</div>
-      <div><strong>Name</strong> {{ order.name }}</div>
-      <div><strong>Address</strong> {{ order.address }}</div>
-      <div><strong>Status</strong> {{ order.status }}</div>
-      <div *ngIf="order.paymentId">
-        <strong>Payment ID</strong> {{ order.paymentId }}
+<div class="order-tracking-container">
+  <h1>Order Tracking</h1>
+  <div
+    *ngFor="let status of orderStatuses; let i = index"
+    class="order-status-item"
+    [ngClass]="getStatusClass(i, currentStatus)"
+  >
+    <div class="status-header" (click)="toggleCollapse(i)">
+      <div class="status-icon">
+        <i class="fa" [ngClass]="status.icon"></i>
       </div>
+      <div class="status-text">{{ status.text }}</div>
     </div>
-
-    <order-items-list [order]="order"></order-items-list>
-  </div>
-
-  <div>
-    <app-title title="Shipping Address"></app-title>
-    <!-- <map [order]="order" [readonly]="true"></map> -->
+    <!-- <div class="status-details" [ngClass]="{ collapsed: !status.isExpanded }">
+      Status details and additional content...
+    </div> -->
   </div>
 </div>

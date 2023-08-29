@@ -3,16 +3,35 @@
     <app-title title="Order Form" fontSize="1.6rem"></app-title>
     <form [formGroup]="checkoutForm">
       <text-input [control]="fc['email']" label="Name"></text-input>
-      <!-- <text-input [control]="fc['address']" label="Address"></text-input> -->
+      <label for="addressSelect">Select Delivery Address:</label>
+      <select
+        [formControl]="selectedAddressControl"
+        id="addressSelect"
+        class="address-select"
+      >
+        <option value="">-- Select an address --</option>
+        <option *ngFor="let address of addresses" [value]="address.id">
+          {{ address.street }}, {{ address.city }}, {{ address.state }}
+          {{ address.postalCode }}
+        </option>
+        <option value="new">Add New Address</option>
+      </select>
     </form>
+    <form
+      *ngIf="selectedAddressControl.value === 'new'"
+      class="new-address-form"
+    >
+      <text-input formControlName="newStreet" label="Street"></text-input>
+      <text-input formControlName="newCity" label="City"></text-input>
+      <text-input formControlName="newState" label="State"></text-input>
+      <text-input
+        formControlName="newPostalCode"
+        label="Postal Code"
+      ></text-input>
+    </form>
+    <!-- Add code for adding a new address form here -->
     <order-items-list [order]="order"></order-items-list>
   </div>
-  <!-- <div class="map">
-      <app-title
-      title="Choose Your Address On Map"
-      fontSize="1.6rem"></app-title>
-      <map [order]="order"></map>
-    </div> -->
   <div class="buttons-container">
     <div class="buttons">
       <button (click)="createOrder()">Place Order</button>

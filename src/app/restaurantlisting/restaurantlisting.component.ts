@@ -17,15 +17,7 @@ export class RestaurantlistingComponent implements OnInit {
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe((params) => {
-      if (params['searchTerm'])
-        this.restaurants = this.restaurantService.getAllRestaurantsBySearchTerm(
-          params['searchTerm']
-        );
-      else if (params['tag'])
-        this.restaurants = this.restaurantService.getAllRestaurantsByTag(
-          params['tag']
-        );
-      else this.restaurants = this.restaurantService.getAllRestaurants();
+      this.restaurants = this.restaurantService.getAllRestaurants();
     });
   }
 }

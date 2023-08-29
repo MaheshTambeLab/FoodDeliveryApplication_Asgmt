@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { Order } from '../shared/models/Order';
-import { ActivatedRoute } from '@angular/router';
+import { Component, Input, OnInit } from '@angular/core';
 import { OrderService } from '../services/order/order.service';
+import { OrderStatus } from '../shared/models/OrderStatus';
 
 @Component({
   selector: 'app-order-track-page',
@@ -9,23 +8,30 @@ import { OrderService } from '../services/order/order.service';
   styleUrls: ['./order-track-page.component.css'],
 })
 export class OrderTrackPageComponent implements OnInit {
-  order!: Order | undefined;
-  constructor(
-    activatedRoute: ActivatedRoute,
-    private orderService: OrderService
-  ) {
-    const params = activatedRoute.snapshot.params;
-    if (!params['orderId']) return;
+  orderStatuses!: OrderStatus[];
+
+  @Input() currentStatus!: number; // Pass the current status index from parent component
+
+  constructor(private orderService: OrderService) {
+    this.orderStatuses = this.orderService.orderStatuses;
   }
 
-  ngOnInit() {
-    const orderId = 1;
-    this.trackOrder(orderId);
+  ngOnInit(): void {}
+
+  getStatusClass(index: number, currentStatus: number): string {
+    currentStatus = 2;
+
+    if (index === currentStatus) {
+      return 'current';
+    } else if (index < currentStatus) {
+      return 'completed';
+    } else {
+      return 'next';
+    }
   }
 
-  trackOrder(id: number) {
-    this.orderService.trackOrderById(id).subscribe((order) => {
-      this.order = order;
-    });
+  toggleCollapse(index: number): void {
+    this.orderService.orderStatuses[index].isExpanded =
+      !this.orderService.orderStatuses[index].isExpanded;
   }
 }

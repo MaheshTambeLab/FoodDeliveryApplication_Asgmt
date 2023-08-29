@@ -15,12 +15,6 @@ export class FoodService {
     );
   }
 
-  getAllFoodsByTag(tag: string): Food[] {
-    return tag == 'All'
-      ? this.getAll()
-      : this.getAll().filter((food) => food.tags?.includes(tag));
-  }
-
   getAllFoodsByRestaurantID(restaurantID: number): Food[] {
     return this.getAll().filter((food) => food.restaurantID === restaurantID);
   }
@@ -39,7 +33,6 @@ export class FoodService {
         origins: ['American'],
         stars: 4.4,
         imageUrl: '/assets/images/foods/engin-akyurt-g1MG9i0ux8Y-unsplash.jpg',
-        tags: ['FastFood', 'Pizza', 'Lunch'],
       },
       {
         id: 2,
@@ -52,7 +45,6 @@ export class FoodService {
         stars: 4.7,
         imageUrl:
           '/assets/images/foods/mai-qu-c-tung-lam-HyuvFrHlJZc-unsplash.jpg',
-        tags: ['SlowFood', 'Lunch'],
       },
       {
         id: 3,
@@ -65,7 +57,6 @@ export class FoodService {
         stars: 4.8,
         imageUrl:
           '/assets/images/foods/cleo-stracuzza-I-X7DAAcZns-unsplash.jpg',
-        tags: ['FastFood', 'Hamburger'],
       },
       {
         id: 4,
@@ -78,7 +69,6 @@ export class FoodService {
         stars: 4.2,
         imageUrl:
           '/assets/images/foods/raphael-nogueira-63mHpYEyjCA-unsplash.jpg',
-        tags: ['FastFood', 'Fry'],
       },
       {
         id: 5,
@@ -90,7 +80,6 @@ export class FoodService {
         origins: ['American'],
         stars: 4.7,
         imageUrl: '/assets/images/foods/victor-rutka-4FujjkcI40g-unsplash.jpg',
-        tags: ['SlowFood', 'Soup'],
       },
       {
         id: 6,
@@ -102,7 +91,6 @@ export class FoodService {
         origins: ['italy'],
         stars: 4.0,
         imageUrl: '/assets/images/foods/quin-engle-lHUdfk5WGXc-unsplash.jpg',
-        tags: ['FastFood', 'Pizza', 'Lunch'],
       },
 
       {
@@ -115,7 +103,6 @@ export class FoodService {
         origins: ['American'],
         stars: 4.5,
         imageUrl: '/assets/images/foods/victoria-shes-UC0HZdUitWY-unsplash.jpg',
-        tags: ['FastFood', 'Pizza', 'Lunch'],
       },
       {
         id: 8,
@@ -127,7 +114,6 @@ export class FoodService {
         origins: ['Italian'],
         stars: 4.2,
         imageUrl: '/assets/images/foods/ben-lei-flFd8L7_B3g-unsplash.jpg',
-        tags: ['FastFood', 'Pizza', 'Lunch'],
       },
       {
         id: 9,
@@ -139,7 +125,6 @@ export class FoodService {
         origins: ['Mexican'],
         stars: 4.0,
         imageUrl: '/assets/images/foods/alex-munsell-auIbTAcSH6E-unsplash.jpg',
-        tags: ['FastFood', 'Pizza', 'Lunch'],
       },
       {
         id: 9,
@@ -151,7 +136,6 @@ export class FoodService {
         origins: ['Southern'],
         stars: 4.6,
         imageUrl: '/assets/images/foods/lucas-andrade-3Uj0GwVmOeY-unsplash.jpg',
-        tags: ['FastFood', 'Pizza', 'Lunch'],
       },
       {
         id: 10,
@@ -165,7 +149,6 @@ export class FoodService {
 
         imageUrl:
           '/assets/images/foods/pirata-studio-film-qt6b5042lrw-unsplash.jpg',
-        tags: ['FastFood', 'Pizza', 'Lunch'],
       },
       {
         id: 11,
@@ -178,7 +161,6 @@ export class FoodService {
         stars: 4.7,
         imageUrl:
           '/assets/images/foods/fernanda-martinez-K0usVR9Iavs-unsplash.jpg',
-        tags: ['FastFood', 'Pizza', 'Lunch'],
       },
     ];
   }

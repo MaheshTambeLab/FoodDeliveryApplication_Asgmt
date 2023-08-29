@@ -4,11 +4,9 @@ import { AngularFireModule } from '@angular/fire/compat';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
-import { TagsComponent } from './tags/tags.component';
 import { RestaurantdetailsComponent } from './restaurantdetails/restaurantdetails.component';
 import { RestaurantlistingComponent } from './restaurantlisting/restaurantlisting.component';
 import { StarratingComponent } from './starrating/starrating.component';
-import { SearchComponent } from './search/search.component';
 import { ShoppingcartComponent } from './shoppingcart/shoppingcart.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { CheckoutComponent } from './checkout/checkout.component';
@@ -26,6 +24,16 @@ import { TextInputComponentimplements } from './text-input/text-input.component'
 import { InputValidationComponent } from './input-validation/input-validation.component';
 import { OrderItemsListComponent } from './order-items-list/order-items-list.component';
 import { OrderTrackPageComponent } from './order-track-page/order-track-page.component';
+import { OrderconfirmationComponent } from './orderconfirmation/orderconfirmation.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatMenuModule } from '@angular/material/menu';
+import { UserprofileComponent } from './userprofile/userprofile.component';
 
 @NgModule({
   declarations: [
@@ -34,8 +42,6 @@ import { OrderTrackPageComponent } from './order-track-page/order-track-page.com
     RestaurantdetailsComponent,
     RestaurantlistingComponent,
     StarratingComponent,
-    SearchComponent,
-    TagsComponent,
     ShoppingcartComponent,
     NotFoundComponent,
     CheckoutComponent,
@@ -52,6 +58,8 @@ import { OrderTrackPageComponent } from './order-track-page/order-track-page.com
     InputValidationComponent,
     OrderItemsListComponent,
     OrderTrackPageComponent,
+    OrderconfirmationComponent,
+    UserprofileComponent,
   ],
   imports: [
     BrowserModule,
@@ -59,6 +67,14 @@ import { OrderTrackPageComponent } from './order-track-page/order-track-page.com
     AngularFireModule.initializeApp(environment.firebase),
     FormsModule,
     ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule,
+    MatExpansionModule,
+    MatMenuModule,
   ],
   exports: [],
   providers: [],

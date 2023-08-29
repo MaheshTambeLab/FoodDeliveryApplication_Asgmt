@@ -1,6 +1,7 @@
 <header>
   <div class="container">
     <a routerLink="/" class="logo">Food Delivery Assignment</a>
+    <a routerLink="/" class="logo">Home</a>
     <nav>
       <ul>
         <li *ngIf="!isAuth">
@@ -10,7 +11,6 @@
           <a routerLink="">Welcome {{ user.displayName }}</a>
           <div class="menu">
             <a routerLink="/profile">Profile</a>
-            <a routerLink="/orders">Orders</a>
             <a (click)="logout()">Logout</a>
           </div>
         </li>

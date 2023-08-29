@@ -65,15 +65,22 @@ img {
   font-weight: bold;
 }
 
-.btn {
-  background-color: red;
-  color: #fff;
-  border: none;
-  padding: 8px 15px;
-  cursor: pointer;
-  font-size: 0.9em;
-}
-
 li + li {
   margin-top: 20px;
+}
+
+/* Add to Cart Button */
+.add-to-cart-button {
+  background-color: #f44336; /* Red background color */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-to-cart-button:hover {
+  background-color: #e53935; /* Darker shade on hover */
 }

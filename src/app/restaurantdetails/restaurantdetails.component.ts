@@ -26,10 +26,5 @@ export class RestaurantdetailsComponent implements OnInit {
     });
   }
 
-  addToCart() {
-    this.cartService.addToCart(this.restaurant);
-    this.router.navigateByUrl('/cart-page');
-  }
-
   ngOnInit(): void {}
 }

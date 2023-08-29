@@ -18,11 +18,16 @@ export class HeaderComponent implements OnInit {
     authService.userObservable.subscribe((newUser) => {
       this.user = newUser;
     });
+
+    cartService.getCartObservable().subscribe((newCart) => {
+      this.cartQuantity = newCart.totalCount;
+    });
   }
 
   ngOnInit(): void {}
 
   logout() {
+    this.cartService.clearCart();
     this.authService.logout();
   }
 
